@@ -1,0 +1,147 @@
+
+.tedr h1 {
+    color: #000;
+    text-align: center;
+    margin-bottom: 1rem;
+    
+  }
+   
+  .subtitle {
+    color: rgb(218, 218, 218);
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .inputs_container {
+    display: flex;
+    flex-direction: column;
+     
+    
+  }
+  .inputs_containernew{
+     
+    background: none;
+  }
+  .inputs_containernew img{
+    width: 5%;
+    border: none;
+    background: #eaeaea; 
+  }
+  .inputs_containernew input {
+    width: 95%;
+    margin: 1.5rem auto;
+    padding: 1rem;
+    //border-radius: 25px;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: 0;
+    background: #eaeaea;
+    border: none;
+  }
+  
+  .login_button {
+    display: block;
+    margin: 3rem auto 1rem auto;
+    width: 55%;
+    padding: 0.75rem 1rem;
+    border-radius: 25px;
+    outline: 0;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    background-color: #4e65f7;
+    color: white;
+    border: 2px solid transparent;
+  }
+  
+  .rememberme_button{
+    display: flex;
+    color: white;
+     
+  }
+  .login_button:hover {
+    border: 2px solid #4e65f7;
+    background-color: #000;
+  }
+  
+  .link_container {
+    display: flex;
+    margin: 2rem auto 1rem auto;
+    justify-content: center;
+  }
+  
+  .small {
+    color: #000;
+     
+    text-align: center;
+    font-size: 1rem;
+    font-family: inherit;
+    
+    text-decoration: underline;
+    margin-bottom: 5rem;
+    cursor: pointer;
+  }
+  
+  .ves {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .test12{
+    display: flex;
+    justify-content: center;
+    margin: 3rem auto 1rem auto;
+    
+    gap: 10rem; 
+  }
+   
+  .test12 icon {
+     
+  }
+  
+  .social{
+    display:flex;
+    justify-content:space-around;
+    padding:30px;
+  }
+  
+  .social i{
+    font-size:35px;
+  }
+  
+  .social i:hover{
+    color:red;
+    cursor:pointer;
+  }
+  
+  .error_msg {
+    color: red;
+    padding-left: 1rem;
+    font-size: 0.85rem;
+    margin: 0;
+  }
+  
+  @media only screen and (max-width: 620px) {
+    .inputs_container input {
+      width: 100%;
+    }
+  
+    .login_button {
+      width: 100%;
+    }
+  
+    .error_msg {
+      padding-left: 0.2rem;
+    }
+  }
+  
+  @media only screen and (max-height: 670px) {
+    .subtitle {
+      margin-bottom: 2rem;
+    }
+  
+    .small {
+      margin-bottom: 3rem;
+    }
+  }
+  

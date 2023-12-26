@@ -5,12 +5,13 @@ import Header from './continers/Header/Header';
 import Signup from './components/Signup/Signup';
 import Login from './components/Login/Login';
 import LoggedIn from './components/LoggedIn/LoggedIn';
-import './App.css';
- 
+import './App.css'; 
 import {Routes, Route} from 'react-router-dom';
+import Signedup from './components/Signedup/Signedup';
 
 const  App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isSignUp, setIsSignedUp] = useState(false);
  
   return (
     <div className="gradient__bg">
@@ -38,7 +39,18 @@ const  App = () => {
                )}
              </>
            } />
-          <Route path="/signup" element={<Signup />} />
+           <Route path="/signup" element={ 
+             <>
+               {isSignUp ? (
+        
+               <Signedup setIsSignedUp={setIsSignedUp} />
+       
+               ) : (
+               <Signup setIsSignedUp={setIsSignedUp} />
+               )}
+             </>
+           } />
+           
            
         </Routes>
         

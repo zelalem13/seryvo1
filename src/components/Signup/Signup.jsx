@@ -1,98 +1,116 @@
 import React, { useState } from "react";
- import '../Signup/Signup.css';
+import "../Login/Login.css";
+import Cards from '../Cards/Cards';
+import GoogleIcon from "@mui/icons-material/Google"  
+import FacebookIcon from "@mui/icons-material/Facebook"  
+//import TwitterIcon from "@mui/icons-material/Twitter";
+import AppleIcon from "@mui/icons-material/Apple";
+//import {database} from '../../utils/database';
+import email_icon from '../../assets/email.png';
+import password_icon from '../../assets/password.png';
 
-const Signup = () => {
-   
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  
-  // States for checking the errors
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState(false);
-  
-  // Handling the name change
-   
-  
-  // Handling the email change
-  const handleEmail = (e) => {
-  setEmail(e.target.value);
-  setSubmitted(false);
+const Signup = ({setIsSignedUp}) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMessages, setErrorMessages] = useState({});
+
+  const errors = {
+    email: "Invalid email",
+    password: "Invalid password",
+    noEmail: "Please enter your email",
+    noPassword: "Please enter your password",
   };
-  
-  // Handling the password change
-  const handlePassword = (e) => {
-  setPassword(e.target.value);
-  setSubmitted(false);
-  };
-  
-  // Handling the form submission
+
   const handleSubmit = (e) => {
-  e.preventDefault();
-  if ( email === '' || password === '') {
-  setError(true);
-  } else {
-  setSubmitted(true);
-  setError(false);
-  }
-  };
-  
-  // Showing success message
-  const successMessage = () => {
-  return (
-  <div
-  className="success"
-  style={{
-  display: submitted ? '' : 'none',
-  }}>
-  <h1>User Email is  {email} successfully registered!!</h1>
-  </div>
-  );
-  };
-  
-  // Showing error message if error is true
-  const errorMessage = () => {
-  return (
-  <div
-  className="error"
-  style={{
-  display: error ? '' : 'none',
-  }}>
-  <h1>Please enter all the fields</h1>
-  </div>
-  );
-  };
-  
-  return (
-    <div className="form">
-  <div>
-  <h1>Create your Account</h1>
-  </div>
-  
-  {/* Calling to the methods */}
-  <div className="messages">
-  {errorMessage()}
-  {successMessage()}
-  </div>
-  
-  <form>
-  {/* Labels and inputs for form data */}
-   
-  
-  <label className="label">Email</label>
-  <input onChange={handleEmail} className="input"
-  value={email} type="email" />
-  
-  <label className="label">Password</label>
-  <input onChange={handlePassword} className="input"
-  value={password} type="password" />
-  
-  <button onClick={handleSubmit} className="btn" type="submit">
-  Submit
-  </button>
-  </form>
-  </div>
-  );
-  }
-   
+    // Prevent page from reloading
+    e.preventDefault();
 
-export default Signup
+    if (!email) {
+      // Username input is empty
+      setErrorMessages({ name: "noEmail", message: errors.noEmail });
+      return;
+    }
+
+    if (!password) {
+      // Password input is empty
+      setErrorMessages({ name: "noPassword", message: errors.noPassword });
+      return;
+    }
+    else{
+      setErrorMessages({});
+      setIsSignedUp(true);
+    }
+    // Search for user credentials
+    //const currentUser = database.find((user) => user.email === email);
+
+    //if (currentUser) {
+      //if (currentUser.password !== password) {
+        // Wrong password
+        //setErrorMessages({ name: "password", message: errors.password });
+      //} else {
+        // Correct password, log in user
+        //setErrorMessages({});
+        //setIsLoggedIn(true);
+      //}
+    //} else {
+      // Username doens't exist in the database
+      //setErrorMessages({ name: "email", message: errors.email });
+    //}
+  };
+
+  // Render error messages
+  const renderErrorMsg = (name) =>
+    name === errorMessages.name && (
+      <p className="error_msg">{errorMessages.message}</p>
+    );
+
+return (
+  
+    <div className="teret">
+      <Cards>
+    <div className="tedr"> 
+       <h1 className="title">Create your Account</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="inputs_container">
+           
+            <img src={email_icon} alt="" /> 
+            <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          {renderErrorMsg("email")}
+          {renderErrorMsg("noEmail")}
+            
+            
+          <img src={password_icon} alt="" />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          {renderErrorMsg("password")}
+          {renderErrorMsg("noPassword")}
+         
+          
+        </div>
+        <input type="submit" value="Sign up" className="login_button" />
+      </form>
+        <label>Or continue with:</label>
+        <div id="iconGroup" className="test12">
+        <FacebookIcon style={{ color: '#1266f1' }} />
+        <GoogleIcon style={{ color: '#EA4335' }} />
+        <AppleIcon style={{ color: '#000' }} />
+        </div>
+      </div>
+      </Cards>
+      </div>
+    
+  );
+  
+};
+
+
+export default Signup;

@@ -1,56 +1,174 @@
- .form{
-    width: 450px;
-    text-align: center;
-    background-color: white;
-    height: 500px;
-    border-radius: 1rem;
-    padding: 2rem;
-    margin: 1rem;
+ 
+.teret{
+   display: flex;
+   //justify-content: center;
+   align-items: center;
+   flex-direction: column;
+    //position: absolute; 
  }
+ .tedr{
+     
+     display: flex;
+     //justify-content: center;
+     align-items: center;
+     flex-direction: column;
+      
+     //position: absolute;
+      
+     
+   }
+   .tedr h1{
+     color: #000;
+   }
     
-    .label{
-    display: block;
-    font-size: larger;
-    color: #000;
-    padding: 5px;
-    }
+   .subtitle {
+     color: rgb(218, 218, 218);
+     text-align: center;
+     margin-bottom: 3rem;
+   }
+   
+   .inputs_container {
+     display: flex;
+     flex-direction: column;
+     background: none;
+     //border-radius: 25px;
+     border: none;
+   }
+   .inputs_containerA{
+     display: flex;
+     flex-direction: column;
+     background: none;
+     //border-radius: 25px;
+     border: none; 
+      
+   }
+   .inputs_container1{
+     display: flex;
+     flex-direction: column;
+     background: none;
+     //border-radius: 25px;
+     border: none; 
+     
+   }
+   .inputs_container img{
+     width: 10%;
+     border: none;
+     background: #eaeaea; 
+   }
+   .inputs_container input{
+     //width: 90%;
+     margin: 0.5rem auto;
+     padding: 1rem;
+      
+     font-size: 1rem;
+     font-family: inherit;
+     outline: 0;
+     background: #eaeaea;
+     border: none;
+   }
+   .login_button {
+     display: block;
+     margin: 3rem auto 1rem auto;
+     width: 80%;
+     padding: 0.75rem 1rem;
+     border-radius: 25px;
+     outline: 0;
+     font-size: 1rem;
+     font-family: inherit;
+     cursor: pointer;
+     background-color: #4e65f7;
+     color: white;
+     border: 2px solid transparent;
+   }
+   
+   .rememberme_button{
+     display: flex;
+     color: white;
+      
+   }
+   .login_button:hover {
+     border: 2px solid #4e65f7;
+     background-color: #000;
+   }
+   
+   .link_container {
+     display: flex;
+     margin: 2rem auto 1rem auto;
+     justify-content: center;
+   }
+   
+   .small {
+     color: #000;
+      
+     text-align: center;
+     font-size: 1rem;
+     font-family: inherit;
+     
+     text-decoration: underline;
+     margin-bottom: 5rem;
+     cursor: pointer;
+   }
+   
+   .ves {
+     display: flex;
+     justify-content: center;
+     gap: 1.5rem;
+   }
+   .test12{
+     display: flex;
+     justify-content: center;
+     margin: 3rem auto 1rem auto;
+     
+     gap: 10rem; 
+   }
     
-    .input{
-    font-size: larger;
-    padding: 5px;
-    margin: 2px;
-    
-    }
-    .btn{
-    color: white;
-    background-color: blue;
-    border-radius: 5px;
-    font-size: larger;
-    display: block;
-    padding: 5px;
-    margin: 10px auto;
-    }
-    
-    .messages{
-    display: flex;
-    justify-content: center;
-    }
-    
-    .error{
-    display: block;
-    background-color: red;
-    color: white;
-    width: fit-content;
-    height: 50px;
-    padding: 5px;
-    }
-    
-    .success{
-    display: block;
-    background-color: lightblue;
-    color: black;
-    width: fit-content;
-    height: 50px;
-    padding: 5px;
-    
-    }
+   .test12 icon {
+      
+   }
+   
+   .social{
+     display:flex;
+     justify-content:space-around;
+     padding:30px;
+   }
+   
+   .social i{
+     font-size:35px;
+   }
+   
+   .social i:hover{
+     color:red;
+     cursor:pointer;
+   }
+   
+   .error_msg {
+     color: red;
+     padding-left: 1rem;
+     font-size: 0.85rem;
+     margin: 0;
+   }
+   
+   @media only screen and (max-width: 620px) {
+     .inputs_container input {
+       width: 100%;
+     }
+   
+     .login_button {
+       width: 100%;
+     }
+   
+     .error_msg {
+       padding-left: 0.2rem;
+     }
+   }
+   
+   @media only screen and (max-height: 670px) {
+     .subtitle {
+       margin-bottom: 2rem;
+     }
+   
+     .small {
+       margin-bottom: 3rem;
+     }
+   }
+   

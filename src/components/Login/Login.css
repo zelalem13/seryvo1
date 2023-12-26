@@ -1,9 +1,24 @@
 
-.tedr h1 {
-    color: #000;
-    text-align: center;
-    margin-bottom: 1rem;
+.teret{
+  display: flex;
+  //justify-content: center;
+  align-items: center;
+  flex-direction: column;
+   //position: absolute; 
+}
+.tedr{
     
+    display: flex;
+    //justify-content: center;
+    align-items: center;
+    flex-direction: column;
+     
+    //position: absolute;
+     
+    
+  }
+  .tedr h1{
+    color: #000;
   }
    
   .subtitle {
@@ -15,34 +30,46 @@
   .inputs_container {
     display: flex;
     flex-direction: column;
+    background: none;
+    //border-radius: 25px;
+    border: none;
+  }
+  .inputs_containerA{
+    display: flex;
+    flex-direction: column;
+    background: none;
+    //border-radius: 25px;
+    border: none; 
      
+  }
+  .inputs_container1{
+    display: flex;
+    flex-direction: column;
+    background: none;
+    //border-radius: 25px;
+    border: none; 
     
   }
-  .inputs_containernew{
-     
-    background: none;
-  }
-  .inputs_containernew img{
-    width: 5%;
+  .inputs_container img{
+    width: 10%;
     border: none;
     background: #eaeaea; 
   }
-  .inputs_containernew input {
-    width: 95%;
-    margin: 1.5rem auto;
+  .inputs_container input{
+    //width: 90%;
+    margin: 0.5rem auto;
     padding: 1rem;
-    //border-radius: 25px;
+     
     font-size: 1rem;
     font-family: inherit;
     outline: 0;
     background: #eaeaea;
     border: none;
   }
-  
   .login_button {
     display: block;
     margin: 3rem auto 1rem auto;
-    width: 55%;
+    width: 80%;
     padding: 0.75rem 1rem;
     border-radius: 25px;
     outline: 0;

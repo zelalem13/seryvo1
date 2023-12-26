@@ -3,7 +3,7 @@ import "../Login/Login.css";
 import Cards from '../Cards/Cards';
 import GoogleIcon from "@mui/icons-material/Google"  
 import FacebookIcon from "@mui/icons-material/Facebook"  
-import TwitterIcon from "@mui/icons-material/Twitter";
+//import TwitterIcon from "@mui/icons-material/Twitter";
 import AppleIcon from "@mui/icons-material/Apple";
 import {database} from '../../utils/database';
 import email_icon from '../../assets/email.png';
@@ -61,24 +61,25 @@ const Login = ({ setIsLoggedIn }) => {
       <p className="error_msg">{errorMessages.message}</p>
     );
 
-  return (
-    <Cards>
-      <div className="tedr"> 
-      <h1 className="title">Logged to your Account</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="inputs_container">
-        <div className="inputs_containernew"> 
-        <img src={email_icon} alt="" />
-          <input
+return (
+  
+    <div className="teret">
+      <Cards>
+    <div className="tedr"> 
+       <h1 className="title">Logged to your Account</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="inputs_container">
+           
+            <img src={email_icon} alt="" /> 
+            <input
             type="email"
             placeholder="Email"
-
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           {renderErrorMsg("email")}
           {renderErrorMsg("noEmail")}
-           
+            
             
           <img src={password_icon} alt="" />
           <input
@@ -90,27 +91,27 @@ const Login = ({ setIsLoggedIn }) => {
           {renderErrorMsg("password")}
           {renderErrorMsg("noPassword")}
          
-        </div>
+          
         </div>
         <input type="checkbox" name="" id="login-checkbox"/> 
         <label className="fal" for="login-checkbox">Remember Me</label>
         <input type="submit" value="Log In" className="login_button" />
       </form>
       <div className="link_container">
-        <a href="" className="small">
+        <a href="/" className="small">
           Forgot Password?
         </a>
       </div>
-      <div id="alternativeLogin" className="ves">
         <label>Or continue with:</label>
-      </div>
         <div id="iconGroup" className="test12">
         <FacebookIcon style={{ color: '#1266f1' }} />
         <GoogleIcon style={{ color: '#EA4335' }} />
         <AppleIcon style={{ color: '#000' }} />
         </div>
       </div>
-    </Cards>
+      </Cards>
+      </div>
+    
   );
   
 };
